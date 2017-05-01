@@ -1,0 +1,28 @@
+﻿@model Lab23.Models.Item
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add a new Item</h2>
+
+<form name="Reg" action="AddItem" method="get">
+    <p>Name:</p>
+
+    <input type="text" id="Name" name="Name" required />
+
+    <p>Description:</p>
+
+    <input type="text" id="Description" name="Description" required />
+
+    <p>Quantity:</p>
+
+    <input type="text" id="Quantity" name="Quantity" required />
+
+    <p>Password:</p>
+
+    <input type="text" id="Price" name="Price" required />
+
+    <br />
+    <input type="submit" name="submit" value="Submit">
+</form>

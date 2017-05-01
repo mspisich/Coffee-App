@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Lab23.Models.Item>
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Admin</h2>
+<p>Edit Available Items</p>
+<br />
+
+<p>@Html.ActionLink("Create New", "Create", "Items")</p>
+
+<table class="ItemTable">
+    <tr>
+        <th>Flavor</th>
+        <th>@Html.DisplayNameFor(model => model.Description)</th>
+        <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+        <th>@Html.DisplayNameFor(model => model.Price)</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.Description)</td>
+            <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+            <td>$@Html.DisplayFor(modelItem => item.Price)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Items", new { id = item.id })
+                @Html.ActionLink("Delete", "Delete", "Items", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
